@@ -4,4 +4,4 @@
 # If you change this key, all old signed cookies will become invalid!
 # Make sure the secret is at least 30 characters and all random,
 # no regular words or you'll be exposed to dictionary attacks.
-Jarbundler::Application.config.secret_token = '1333e0f80e0b038a40cb8027ba106a97f8e8f7dc0f65b55a23125be771893a28aa0738a754653d44e684047b10b70b914c52de4a8a6cf427776b654de51ad207'
+Modder::Application.config.secret_token = 'ab74ba04a2a103639c6775af40788563888d0cf7cc336d6104aea883094e5945b10840b3d11cdc987980242d5d2922a8ba2db72457052f60ebcf71e4a162f005'

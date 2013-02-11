@@ -1,0 +1,24 @@
+<%= form_for(@upload, :html => {:multipart => true}) do |f| %>
+  <% if @upload.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@upload.errors.count, "error") %> prohibited this upload from being saved:</h2>
+
+      <ul>
+      <% @upload.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">Your minecraft.jar file --&gt;
+    <%= f.file_field :minecraft_jar %>
+  </div>
+  <div class="field">
+    The file (zip, rar, or jar) containing the mod you want to add --&gt;
+    <%= f.file_field :mod_jar %>
+  </div>
+  <div class="actions">
+    <%= f.submit :value => 'Upload JARs' %>
+  </div>
+<% end %>
