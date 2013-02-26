@@ -1,0 +1,9 @@
+<p>Here we are in combine.html.erb</p>
+
+<p>Minecraft JAR: <%= @upload.minecraft_jar.path %></p>
+<p>mod jar: <%= @upload.mod_jar.path %></p>
+<p>temp dir: <%= @tmpdir %></p>
+
+<p>mc jar exists? <b><%=File.exists?(@upload.minecraft_jar.path) %></b></p>
+
+<p>Flash: <b><%= flash[:message] %></b></p>

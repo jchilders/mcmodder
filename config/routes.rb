@@ -2,6 +2,8 @@ Modder::Application.routes.draw do
   resources :uploads
   resources :modders
 
+  match 'uploads/:id/combine' => 'uploads#combine'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

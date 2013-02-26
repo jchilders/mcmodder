@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130210214501) do
+ActiveRecord::Schema.define(:version => 20130225231454) do
 
   create_table "uploads", :force => true do |t|
     t.datetime "created_at",                 :null => false
@@ -24,6 +24,7 @@ ActiveRecord::Schema.define(:version => 20130210214501) do
     t.string   "mod_jar_content_type"
     t.integer  "mod_jar_file_size"
     t.datetime "mod_jar_updated_at"
+    t.string   "tempdir"
   end
 
 end

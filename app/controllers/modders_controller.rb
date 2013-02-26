@@ -11,8 +11,7 @@ class ModdersController < ApplicationController
 
     mc_zip = Zip::ZipFile.new(mc_jar_path)
     Zip::ZipFile.foreach(mod_path) do |zipfile|
-      @jar_contents << zipfile
-      #mc_zip.add(zipfile, zipfile.to_s)
+      mc_zip.add(zipfile)
     end
 
   end

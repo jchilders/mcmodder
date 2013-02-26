@@ -1,4 +1,6 @@
 class UploadsController < ApplicationController
+  MC_JAR = 'public/minecraft.jar'
+
   # GET /uploads
   # GET /uploads.json
   def index
@@ -82,4 +84,26 @@ class UploadsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def combine
+    @upload = Upload.find(params[:id])
+    if (!@upload.tempdir)
+      @tmpdir = "public/temp/#{rand(36**15).to_s(36)}"
+      @upload.tempdir = @tmpdir
+      @upload.save
+    end
+
+    @tmpdir = @upload.tempdir
+
+    if (!File.exists?(@tmpdir))
+      Dir::mkdir(@tmpdir)
+    end
+
+    # Clean the temp directory
+    FileUtils.rm_rf(Dir.glob(@upload.tempdir + "/*"), :secure => true)
+    `unzip #{MC_JAR} -d #{@upload.tempdir}`
+    `unzip #{@upload.mod_jar.path} -o -d #{@upload.tempdir}`
+    `zip --move -r #{@upload.tempdir}/minecraft.jar #{@upload.tempdir}/*`
+  end
+
 end
