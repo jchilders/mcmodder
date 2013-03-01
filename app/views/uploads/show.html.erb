@@ -8,6 +8,7 @@
   <b>Mod file (zip, rar, or jar)::</b>
   <%= @upload.mod_jar %>
   <p><b>Size: </b> <%= @upload.mod_jar_file_size %></p>
+  <p><b>Temp dir: </b> <%= @upload.tempdir %></p>
 </p>
 
 <%= link_to 'Edit', edit_upload_path(@upload) %> |
