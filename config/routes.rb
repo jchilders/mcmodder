@@ -1,4 +1,4 @@
-Modder::Application.routes.draw do
+Mcmodder::Application.routes.draw do
   resources :uploads
   resources :modders
 

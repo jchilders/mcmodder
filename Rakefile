@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Modder::Application.load_tasks
+Mcmodder::Application.load_tasks
