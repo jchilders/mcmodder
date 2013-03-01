@@ -3,8 +3,13 @@ class UpController < ApplicationController
     @upload = Upload.new
   end
 
-  def upload
-    mc_jar = params[:minecraft_jar]
+  def create
+    if !params[:upload]
+      redirect_to(up, :error => 'No file specified.')
+    end
+
+    mc_jar = params[:upload][:minecraft_jar]
+
     puts "mc_jar type: #{mc_jar.content_type}"
 
     if mc_jar.content_type != "application/java-archive"

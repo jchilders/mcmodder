@@ -4,4 +4,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Jarbundler::Application.load_tasks
+Modder::Application.load_tasks
