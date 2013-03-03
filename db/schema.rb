@@ -11,15 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130225231454) do
+ActiveRecord::Schema.define(:version => 20130301045802) do
 
   create_table "uploads", :force => true do |t|
-    t.datetime "created_at",                 :null => false
-    t.datetime "updated_at",                 :null => false
-    t.string   "minecraft_jar_file_name"
-    t.string   "minecraft_jar_content_type"
-    t.integer  "minecraft_jar_file_size"
-    t.datetime "minecraft_jar_updated_at"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
     t.string   "mod_jar_file_name"
     t.string   "mod_jar_content_type"
     t.integer  "mod_jar_file_size"

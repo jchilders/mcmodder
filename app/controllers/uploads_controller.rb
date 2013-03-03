@@ -43,7 +43,6 @@ class UploadsController < ApplicationController
   # POST /uploads.json
   def create
     @upload = Upload.new
-    @upload.update_attributes(:minecraft_jar => params[:upload][:minecraft_jar])
     @upload.update_attributes(:mod_jar => params[:upload][:mod_jar])
 
     respond_to do |format|

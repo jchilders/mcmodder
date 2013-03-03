@@ -1,9 +1,0 @@
-
-<%= form_for(@upload, :url => {:action => :upload}, :multipart => true) do |f| %>
-  <p>Your minecraft.jar file: <%= f.file_field :minecraft_jar %></p>
-  <input type="submit">
-<% end %>
-
-<% if defined? error %>
-  <div id="error"><%= error %></div>
-<% end %>
