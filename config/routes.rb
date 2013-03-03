@@ -1,6 +1,6 @@
 Mcmodder::Application.routes.draw do
   resources :uploads
-  resources :modders
+  resources :generate
 
   match 'uploads/:id/combine' => 'uploads#combine'
 

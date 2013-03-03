@@ -1,5 +1,4 @@
 class UploadsController < ApplicationController
-  MC_JAR = "#{Rails.root}/public/minecraft.jar"
 
   # GET /uploads
   # GET /uploads.json

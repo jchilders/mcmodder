@@ -1,17 +1,18 @@
 <h1>Available Mods</h1>
 
+<form name="createMod" action="/generate">
 <table>
   <tr>
-    <th>Mod Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th></th><th>Mod Name</th><th></th><th></th><th></th>
   </tr>
 
 <%= render @uploads %>
-
+<tr><td><input type="submit" /></td></tr>
 </table>
+</form>
 
 <br />
+
+<h2><a href="">Create Modded <code>minecraft.jar</code></a></h2>
 
 <%= link_to 'New Upload', new_upload_path %>
