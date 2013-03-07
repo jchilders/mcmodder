@@ -2,6 +2,13 @@
 class GenerateController < ApplicationController
   def index
     mods = params[:mod]
+
+    # If no mods, just send the unmodified mc.jar
+    if (!mods) then
+      send_file "#{MC_JAR}", :type => 'application/java-archive' if (!mods) 
+      return
+    end
+
     uploads = Upload.find(mods)
 
     # Create the temp dir
@@ -9,6 +16,7 @@ class GenerateController < ApplicationController
     if (!File.exists?(tmpdir))
       Dir::mkdir(tmpdir)
     end
+
     # Clean it temp directory, just in case
     FileUtils.rm_rf(Dir.glob(tmpdir + "/*"), :secure => true)
 
