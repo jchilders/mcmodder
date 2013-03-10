@@ -1,0 +1,17 @@
+
+<%= form_for @user_session, :as => :user_session, :url => { :action => "create" } do |f| %>
+  <div class="span4">&nbsp</div>
+  <div class="span4 vertcenter-outer">
+    <div class="vertcenter-inner">
+      <h2>Login</h2>
+      <div class="share">
+        <ul>
+          <li><%= f.text_field :email, :placeholder => 'Email' %></li>
+          <li><%= f.password_field :password, :placeholder => 'Password' %></li>
+          <li><%= f.submit "Submit", :class => 'btn btn-block' %></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="span4">&nbsp</div>
+<% end %>

@@ -1,4 +1,6 @@
 Mcmodder::Application.routes.draw do
+  resources :user_sessions, :path => 'login'
+
   resources :uploads
   resources :generate
 
