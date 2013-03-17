@@ -1,3 +1,5 @@
+<h1>Signed in? <%= user_signed_in? %></h1>
+<%= link_to "Logout", destroy_user_session_path, :method => :delete %>
 <h1>Available Mods</h1>
 
 <form name="createMod" id="createModForm" action="/generate">
