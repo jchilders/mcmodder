@@ -7,6 +7,11 @@
   <%= csrf_meta_tags %>
 </head>
 <body class="palette palette-night">
+  <% if user_signed_in? %>
+    <%= link_to(destroy_user_session_path, :method => :delete) do %>
+      <span style="position:absolute;right:10%" class="fui-cross-24"></span>
+    <% end %>
+  <% end %>
   <div class="container">
     <%= yield %>
   </div>
