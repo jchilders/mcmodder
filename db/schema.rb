@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130310210946) do
+ActiveRecord::Schema.define(:version => 20130317012633) do
 
   create_table "uploads", :force => true do |t|
     t.datetime "created_at",           :null => false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(:version => 20130310210946) do
     t.integer  "login_count",         :default => 0, :null => false
     t.integer  "failed_login_count",  :default => 0, :null => false
     t.datetime "last_request_at"
-    t.datetime "curent_login_at"
+    t.datetime "current_login_at"
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"

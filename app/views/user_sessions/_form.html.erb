@@ -6,6 +6,7 @@
       <h2>Login</h2>
       <div class="share">
         <ul>
+          <li><%= flash[:notice] %></li>
           <li><%= f.text_field :email, :placeholder => 'Email' %></li>
           <li><%= f.password_field :password, :placeholder => 'Password' %></li>
           <li><%= f.submit "Submit", :class => 'btn btn-block' %></li>

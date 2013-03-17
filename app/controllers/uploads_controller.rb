@@ -1,4 +1,5 @@
 class UploadsController < ApplicationController
+  before_filter :require_user, :only => [:index, :show, :edit, :update, :destroy]
 
   # GET /uploads
   # GET /uploads.json
