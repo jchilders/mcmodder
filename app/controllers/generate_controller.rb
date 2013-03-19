@@ -17,7 +17,7 @@ class GenerateController < ApplicationController
       Dir::mkdir(tmpdir)
     end
 
-    # Clean it temp directory, just in case
+    # Clean out temp directory, just in case
     FileUtils.rm_rf(Dir.glob(tmpdir + "/*"), :secure => true)
 
     # Unzip the local minecraft.jar file
@@ -28,6 +28,7 @@ class GenerateController < ApplicationController
     uploads.each do |ul|
       `unzip -o #{ul.mod_jar.path} -d #{tmpdir}`
     end
+
     #  Create the new minecraft.jar
     `cd #{tmpdir} && rm -r META-INF && zip --move -r minecraft.jar *`
 

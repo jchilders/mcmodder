@@ -102,7 +102,7 @@ class UploadsController < ApplicationController
     FileUtils.rm_rf(Dir.glob(@upload.tempdir + "/*"), :secure => true)
     `unzip #{MC_JAR} -d #{@upload.tempdir}`
     `unzip -o #{@upload.mod_jar.path} -d #{@upload.tempdir}`
-    `cd #{@upload.tempdir} && rm -r META-INF && zip --move -r minecraft.jar *`
+    #`cd #{@upload.tempdir} && rm -r META-INF && zip --move -r minecraft.jar *`
     send_file "#{@upload.tempdir}/minecraft.jar", :type => 'application/java-archive'
   end
 
