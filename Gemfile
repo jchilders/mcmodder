@@ -18,12 +18,9 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem "paperclip", "~> 3.0"
-  gem 'rubyzip'
-
-  gem 'zippy'
 end
 
+gem "paperclip", "~> 3.0"
 gem 'jquery-rails'
 gem 'devise'
 
@@ -40,4 +37,6 @@ gem 'devise'
 # gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+group :development do
+  gem 'debugger'
+end
