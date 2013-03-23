@@ -11,3 +11,13 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+class ActionController::TestCase
+  include Devise::TestHelpers
+
+end
+
+def test_jar(filename: 'mod.jar')
+  Rack::Test::UploadedFile.new('test/fixtures/' + filename, 'application/java-archive')
+end
+

@@ -44,29 +44,12 @@ class UploadsController < ApplicationController
   def create
     @upload = Upload.new
     @upload.update_attributes(:mod_jar => params[:upload][:mod_jar])
-
-    respond_to do |format|
+respond_to do |format|
       if @upload.save
         format.html { redirect_to @upload, notice: 'Upload was successfully created.' }
         format.json { render json: @upload, status: :created, location: @upload }
       else
         format.html { render action: "new" }
-        format.json { render json: @upload.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-
-  # PUT /uploads/1
-  # PUT /uploads/1.json
-  def update
-    @upload = Upload.find(params[:id])
-
-    respond_to do |format|
-      if @upload.update_attributes(params[:upload])
-        format.html { redirect_to @upload, notice: 'Upload was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
         format.json { render json: @upload.errors, status: :unprocessable_entity }
       end
     end
