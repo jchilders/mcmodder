@@ -21,7 +21,6 @@ class UploadsControllerTest < ActionController::TestCase
 
   test "should create upload" do
     sign_in @user
-    debugger
     assert_difference('Upload.count') do
       post :create, upload: { mod_jar: test_jar }
     end
